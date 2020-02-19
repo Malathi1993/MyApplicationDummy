@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_taskname"
         android:text="TaskName"
+        android:textSize="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"/>
@@ -20,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_TaskName"
-        android:text="TODO"
+        android:hint="TODO"
         android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"/>
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_workdiscription"
         android:text="workdiscription"
+        android:textSize="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"/>
@@ -37,32 +39,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/et_Discription"
-        android:text="Discription"
-        android:lines="7"
+        android:hint="Discription"
+        android:lines="10"
         android:minLines="5"
         android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"/>
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/btn_Calendarpicker"
+    android:text="CalendarPicker"
+    android:textAllCaps="false"
+    android:background="@color/colorAccent"
+    android:textColor="@color/colorWhite"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="50dp"
+    android:layout_marginLeft="50dp"/>
 
-    <CalendarView
-        android:id="@+id/calendarView"
+    <TextView
+        android:id="@+id/date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"/>
+        android:textSize="20dp"
+        android:text="Date"/>
 
     <Button
         android:id="@+id/btn_addtask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textAllCaps="false"
         android:text="Add Task"
         android:textStyle="bold"
         android:background="@color/colorAccent"
         android:textColor="@color/colorWhite"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"/>
+
 
 
 </LinearLayout>
