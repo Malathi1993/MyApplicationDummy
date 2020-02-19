@@ -13,13 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Todo1Activity extends AppCompatActivity {
-         TextView TaskName;
-         TextView workdiscription;
-         EditText TODO;
-         EditText Discription;
-         CalendarView calendarView;
-         Button AddTask;
-         private Object Button;
+    TextView TaskName;
+    TextView workdiscription;
+    EditText TODO;
+    EditText Discription;
+    CalendarView calendarView;
+    Button AddTask;
+    private Object Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class Todo1Activity extends AppCompatActivity {
         calendarView = (CalendarView)findViewById(R.id.calendarView);
         AddTask = (Button)findViewById(R.id.btn_addtask);
 
-         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
                 @Override
                 public void onSelectedDayChange(CalendarView view, int year, int month,
@@ -66,4 +66,4 @@ public class Todo1Activity extends AppCompatActivity {
       });
 
         }
-}
+    }
