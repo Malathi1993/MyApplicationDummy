@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
@@ -29,7 +30,7 @@ public class Todo1Activity extends AppCompatActivity {
         TODO = (EditText) findViewById(R.id.et_TaskName);
         Discription = (EditText) findViewById(R.id.et_Discription);
         calendarView = (CalendarView)findViewById(R.id.calendarView);
-        Button = (Button)findViewById(R.id.btn_addtask);
+        AddTask = (Button)findViewById(R.id.btn_addtask);
 
          calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
@@ -56,6 +57,12 @@ public class Todo1Activity extends AppCompatActivity {
                 }
             }
     ).show();
+      AddTask.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+
+          }
+      });
 
         }
 }
