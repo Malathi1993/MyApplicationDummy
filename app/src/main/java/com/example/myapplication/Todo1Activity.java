@@ -28,7 +28,7 @@ public class Todo1Activity extends AppCompatActivity {
     //CalendarView calendarView;
     Button AddTask;
     Button CalenderPicker;
-    private int mYear, mMonth, mDay, mHour, mMinute;
+    private int mYear, mMonth, mDay;
     private View CalendarPicker;
 
     @Override
@@ -64,7 +64,7 @@ public class Todo1Activity extends AppCompatActivity {
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
 
-                                txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                                CalendarPicker.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
 
                             }
                         }, mYear, mMonth, mDay);
