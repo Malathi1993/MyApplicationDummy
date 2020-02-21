@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
     public static final int REQUEST_CODE = 100;
-    public ArrayList<com.example.myapplication.Task> taskList = new ArrayList<>();
+    public ArrayList<Task> taskList = new ArrayList<>();
     RecyclerView taskRecyclerview;
     TasksAdapter tasksAdapter;
 
@@ -38,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         taskRecyclerview.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         tasksAdapter = new TasksAdapter(this,taskList);
+        taskRecyclerview.addItemDecoration(dividerItemDecoration);
         taskRecyclerview.setAdapter(tasksAdapter);
     }
 
@@ -50,13 +53,11 @@ public class MainActivity extends AppCompatActivity {
             Bundle result;
             if(data != null) {
                 result = data.getExtras();
-                com.example.myapplication.Task task = new com.example.myapplication.Task();
+                Task task = new Task();
                 task.setTaskName(result.getString("task_name"));
                 task.setTaskDescription(result.getString("task_desc"));
                 task.setDate(result.getString("date"));
-                taskList.add(task);
-                tasksAdapter.updateItems(taskList);
-                tasksAdapter.notifyDataSetChanged();
+                tasksAdapter.updateItems(task);
                 Toast.makeText(this, task.getTaskName()+""+task.getTaskDescription()+""+task.getDate(), Toast.LENGTH_LONG).show();
             }
         }
